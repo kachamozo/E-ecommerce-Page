@@ -14,7 +14,7 @@ function MainHeader() {
 
 	const handleOpenMenu = () => {
 		setNavClass(
-			'absolute top-0 left-0 flex h-full w-4/5  flex-col gap-y-5 bg-white p-8 font-bold md:static md:mr-auto md:flex md:h-auto md:flex-row md:gap-4 md:p-0 cursor-pointer '
+			'absolute top-0 left-0 z-10 flex h-full w-4/5 cursor-pointer flex-col gap-y-5 bg-white p-8 font-bold md:static md:mr-auto md:flex md:h-auto md:flex-row md:gap-4 md:p-0 '
 		);
 	};
 	const handleCloseMenu = () => {
@@ -25,7 +25,7 @@ function MainHeader() {
 
 	return (
 		<>
-			<header className='container relative mx-auto flex items-center gap-8 p-4 md:p-0'>
+			<header className='container mx-auto flex items-center gap-8 p-4 md:p-0'>
 				<button className='md:hidden' onClick={handleOpenMenu}>
 					<MenuIcon />
 				</button>
@@ -36,7 +36,7 @@ function MainHeader() {
 					className='mr-auto mb-1 h-5 md:mr-0'
 				/>
 				<nav className={navClass}>
-					<button className='mb-12 md:hidden' onClick={handleCloseMenu}>
+					<button className='mb-12 md:hidden ' onClick={handleCloseMenu}>
 						<CloseIcon />
 					</button>
 
