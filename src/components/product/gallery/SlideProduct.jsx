@@ -13,6 +13,7 @@ export default ({
 	const [imgIndex, setImgIndex] = useState(0);
 	const btnSlider = useRef(null);
 
+	// para quitar los botones de next y prev solo del md tb se puede hacer con un ternario
 	useEffect(() => {
 		if (isOpenModal) return btnSlider.current.classList.remove('md:hidden');
 	}, [isOpenModal]);
@@ -39,13 +40,14 @@ export default ({
 				<img
 					src={ARRAY_IMGS[imgIndex]}
 					alt='img 1'
-					className='aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md'
+					className='aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:max-h-[500px]'
 					onClick={handleOpenModal}
 				/>
 
 				<div
 					ref={btnSlider}
 					className='absolute top-1/2 left-0 flex w-full -translate-y-1/2 justify-between px-4 md:hidden'
+					// ${!isOpenModal && 'md:hidden'}
 				>
 					<button
 						onClick={handleClickPrev}
